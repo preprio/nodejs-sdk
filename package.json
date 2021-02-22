@@ -2,9 +2,9 @@
   "name": "@preprio/nodejs-sdk",
   "version": "1.0.0",
   "description": "Prepr Node.js SDK",
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
-    "lib": "lib/index.js"
+    "lib": "lib"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
     "murmurhash": "^2.0.0",
     "node-fetch": "^2.6.1",
     "prettier": "^2.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
