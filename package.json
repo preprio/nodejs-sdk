@@ -1,0 +1,26 @@
+{
+  "name": "@preprio/nodejs-sdk",
+  "version": "1.0.0",
+  "description": "Prepr Node.js SDK",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/preprio/nodejs-sdk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/preprio/nodejs-sdk/issues"
+  },
+  "homepage": "https://github.com/preprio/nodejs-sdk#readme",
+  "devDependencies": {
+    "abort-controller": "^3.0.0",
+    "murmurhash": "^2.0.0",
+    "node-fetch": "^2.6.1",
+    "prettier": "^2.2.1"
+  }
+}
