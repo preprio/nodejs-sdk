@@ -24,4 +24,4 @@ Contact our support team at support@prepr.io or join our Prepr Slack.
 
 ### You found a bug or want to propose a feature?
 
-File an issue here on GitHub: File an issue. Don't share any authentication info in any code before sharing it.
+File an issue here on GitHub. Don't share any authentication info in any code before sharing it.
