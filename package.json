@@ -1,6 +1,6 @@
 {
   "name": "@preprio/nodejs-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Prepr Node.js SDK",
   "main": "lib/index.js",
   "directories": {
