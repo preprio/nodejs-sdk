@@ -1,7 +1,7 @@
 {
   "name": "@preprio/nodejs-sdk",
   "version": "1.0.2",
-  "description": "Prepr Node.js SDK",
+  "description": "The official Prepr SDK for Node.js",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib"
@@ -10,8 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/preprio/nodejs-sdk.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "prepr",
+    "cms",
+    "nodejs",
+    "sdk"
+  ],
+  "author": "Prepr.io <support@prepr.io>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/preprio/nodejs-sdk/issues"
