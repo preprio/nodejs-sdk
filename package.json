@@ -22,7 +22,7 @@
     "url": "https://github.com/preprio/nodejs-sdk/issues"
   },
   "homepage": "https://github.com/preprio/nodejs-sdk#readme",
-  "devDependencies": {
+  "dependencies": {
     "abort-controller": "^3.0.0",
     "murmurhash": "^2.0.0",
     "node-fetch": "^2.6.1",
