@@ -48,8 +48,6 @@ const { prepr } = require('./services/prepr')
 const result = await prepr
   .path('/publications') // request path `https://cdn.prepr.io/publications`
   .query('...') // query data https://prepr.dev/docs/rest/v1/introduction
-  .graphqlQuery(`GraphQL Query`) // https://prepr.dev/docs/graphql/v1/collection-introduction
-  .graphqlVariables('{JSON_VARIABLE_PAYLOAD}')
   .timeout(8000) // Override globally set timeout for request cancellation
   .userId('...') // Override globally set userId for ab testing
   .sort('created_at') // Sort data
