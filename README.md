@@ -28,7 +28,7 @@ const { createPreprClient } = require('@preprio/nodejs-sdk')
 const prepr = createPreprClient({
   token: '<your access token>', // required
   timeout: 4000, // default value
-  baseUrl: 'https://cdn.prepr.io', // default value
+  baseUrl: 'https://cdn.prepr.io', // default value, for GraphQL API use https://graphql.prepr.io/graphql
   userId: null, // optional, used for AB testing
 })
 
