@@ -50,6 +50,7 @@ const result = await prepr
   .query('...') // query data https://prepr.dev/docs/rest/v1/introduction
   .timeout(8000) // Override globally set timeout for request cancellation
   .userId('...') // Override globally set userId for ab testing
+  .token('xx-xx') // Update the Token used by the SDK for example when previewing staged content
   .sort('created_at') // Sort data
   .limit(8) // Limit the amount collections being returned
   .fetch() // Fetch the collections
@@ -70,6 +71,7 @@ const result = await prepr
   .graphqlVariables('{JSON_VARIABLE_PAYLOAD}')
   .timeout(8000) // Override globally set timeout for request cancellation
   .userId('...') // Override globally set userId for ab testing
+  .token('xx-xx') // Update the Token used by the SDK for example when previewing staged content   
   .fetch() // Fetch the collections
 ```
 
