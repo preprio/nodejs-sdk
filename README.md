@@ -47,12 +47,17 @@ const { prepr } = require('./services/prepr')
 
 const result = await prepr
   .path('/publications') // request path `https://cdn.prepr.io/publications`
-  .query('...') // query data https://prepr.dev/docs/rest/v1/introduction
+  .query({
+      'model' : {
+          'eq' : 'x-x-x-x-x'
+      }
+  }) // query data https://prepr.dev/docs/rest/v1/introduction
   .timeout(8000) // Override globally set timeout for request cancellation
   .userId('...') // Override globally set userId for ab testing
   .token('xx-xx') // Update the Token used by the SDK for example when previewing staged content
   .sort('created_at') // Sort data
   .limit(8) // Limit the amount collections being returned
+  .skip(0) // Skip the first x amount collections before returning resources
   .fetch() // Fetch the collections
 ```
 
@@ -68,7 +73,7 @@ const { prepr } = require('./services/prepr')
 
 const result = await prepr
   .graphqlQuery(`GraphQL Query`) // https://prepr.dev/docs/graphql/v1/collection-introduction
-  .graphqlVariables('{JSON_VARIABLE_PAYLOAD}')
+  .graphqlVariables({JSON_VARIABLE_PAYLOAD})
   .timeout(8000) // Override globally set timeout for request cancellation
   .userId('...') // Override globally set userId for ab testing
   .token('xx-xx') // Update the Token used by the SDK for example when previewing staged content   
