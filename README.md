@@ -55,6 +55,8 @@ const result = await prepr
   .fetch() // Fetch the collections
 ```
 
+To help you querying our API we've added multiple examples to our [REST Reference](https://prepr.dev/docs/rest/v1/introduction).
+
 ## Usage GraphQL API
 
 To perform API requests you can make use of our fluent builder, this is how it looks like
@@ -71,7 +73,7 @@ const result = await prepr
   .fetch() // Fetch the collections
 ```
 
-To help you querying our API we've added multiple examples to our [Developers site](https://prepr.dev).
+To help you querying our API we've added multiple examples to our [GraphQL Reference](https://prepr.dev/docs/graphql/v1/introduction).
 
 ## Reach out to us
 
