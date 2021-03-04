@@ -1,6 +1,6 @@
 {
   "name": "@preprio/nodejs-sdk",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The official Prepr SDK for Node.js",
   "main": "lib/index.js",
   "directories": {
@@ -17,7 +17,7 @@
     "sdk"
   ],
   "author": "Prepr.io <support@prepr.io>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/preprio/nodejs-sdk/issues"
   },
@@ -25,7 +25,9 @@
   "dependencies": {
     "abort-controller": "^3.0.0",
     "murmurhash": "^2.0.0",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
     "prettier": "^2.2.1"
   },
   "scripts": {
