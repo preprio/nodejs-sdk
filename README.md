@@ -28,7 +28,7 @@ const { createPreprClient } = require('@preprio/nodejs-sdk')
 const prepr = createPreprClient({
   token: '<your access token>', // required
   timeout: 4000, // default value
-  baseUrl: 'https://cdn.prepr.io', // default value
+  baseUrl: 'https://cdn.prepr.io', // default value (REST API), for GraphQL API use https://graphql.prepr.io/graphql
   userId: null, // optional, used for AB testing
 })
 
@@ -37,7 +37,7 @@ module.exports = { prepr }
 
 Great, now we have the configuration in one place. Now, we can import our configured prepr client to perform requests.
 
-## Usage
+## Usage REST API
 
 To perform API requests you can make use of our fluent builder, this is how it looks like
 
@@ -45,17 +45,37 @@ To perform API requests you can make use of our fluent builder, this is how it l
 // We created this earlier
 const { prepr } = require('./services/prepr')
 
-const publications = await prepr
+const result = await prepr
   .path('/publications') // request path `https://cdn.prepr.io/publications`
   .query('...') // query data https://prepr.dev/docs/rest/v1/introduction
   .timeout(8000) // Override globally set timeout for request cancellation
   .userId('...') // Override globally set userId for ab testing
+  .token('xx-xx') // Update the Token used by the SDK for example when previewing staged content
   .sort('created_at') // Sort data
   .limit(8) // Limit the amount collections being returned
   .fetch() // Fetch the collections
 ```
 
-To help you querying our API we've added multiple examples to our [Developers site](https://prepr.dev).
+To help you querying our API we've added multiple examples to our [REST Reference](https://prepr.dev/docs/rest/v1/introduction).
+
+## Usage GraphQL API
+
+To perform API requests you can make use of our fluent builder, this is how it looks like
+
+```js
+// We created this earlier
+const { prepr } = require('./services/prepr')
+
+const result = await prepr
+  .graphqlQuery(`GraphQL Query`) // https://prepr.dev/docs/graphql/v1/collection-introduction
+  .graphqlVariables('{JSON_VARIABLE_PAYLOAD}')
+  .timeout(8000) // Override globally set timeout for request cancellation
+  .userId('...') // Override globally set userId for ab testing
+  .token('xx-xx') // Update the Token used by the SDK for example when previewing staged content   
+  .fetch() // Fetch the collections
+```
+
+To help you querying our API we've added multiple examples to our [GraphQL Reference](https://prepr.dev/docs/graphql/v1/introduction).
 
 ## Reach out to us
 
