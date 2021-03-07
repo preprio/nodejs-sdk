@@ -85,7 +85,7 @@ To help you querying our API we've added multiple examples to our [GraphQL Refer
 ## Reach out to us
 
 You have questions about how to use this library or the Prepr API?
-Contact our support team at support@prepr.io or join our Prepr Slack.
+Contact our support team at support@prepr.io or join our community on [Slack](https://slack.prepr.io).
 
 ### You found a bug or want to propose a feature?
 
