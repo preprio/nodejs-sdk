@@ -37,6 +37,44 @@ module.exports = { prepr }
 
 Great, now we have the configuration in one place. Now, we can import our configured prepr client to perform requests.
 
+## Usage GraphQL API
+
+To perform API requests you can make use of our fluent builder, this is how it looks like
+
+```js
+// We created this earlier
+const { prepr } = require('./services/prepr')
+
+const result = await prepr
+  .graphqlQuery(`GraphQL Query`) // https://prepr.dev/docs/graphql/v1/collection-introduction
+  .graphqlVariables({JSON_VARIABLE_PAYLOAD})
+  .timeout(8000) // Override globally set timeout for request cancellation
+  .userId('...') // Override globally set userId for ab testing
+  .token('xx-xx') // Update the Token used by the SDK for example when previewing staged content   
+  .fetch() // Fetch the collections
+```
+
+Let's request all Pages in our Prepr environment.
+
+```js
+    // We created this earlier
+    const {prepr} = require('./services/prepr')
+    
+    const result = await prepr
+    .graphqlQuery(`{
+        Pages {
+            items {
+                _id
+                title
+                summary
+            }
+        }
+    }`)
+    .fetch()
+```
+
+To help you querying our API we've added multiple examples to our [GraphQL Reference](https://prepr.dev/docs/graphql/v1/introduction).
+
 ## Usage REST API
 
 To perform API requests you can make use of our fluent builder, this is how it looks like
@@ -63,30 +101,10 @@ const result = await prepr
 
 To help you querying our API we've added multiple examples to our [REST Reference](https://prepr.dev/docs/rest/v1/introduction).
 
-## Usage GraphQL API
-
-To perform API requests you can make use of our fluent builder, this is how it looks like
-
-```js
-// We created this earlier
-const { prepr } = require('./services/prepr')
-
-const result = await prepr
-  .graphqlQuery(`GraphQL Query`) // https://prepr.dev/docs/graphql/v1/collection-introduction
-  .graphqlVariables({JSON_VARIABLE_PAYLOAD})
-  .timeout(8000) // Override globally set timeout for request cancellation
-  .userId('...') // Override globally set userId for ab testing
-  .token('xx-xx') // Update the Token used by the SDK for example when previewing staged content   
-  .fetch() // Fetch the collections
-```
-
-To help you querying our API we've added multiple examples to our [GraphQL Reference](https://prepr.dev/docs/graphql/v1/introduction).
-
 ## Reach out to us
 
 You have questions about how to use this library or the Prepr API?
 Contact our support team at support@prepr.io or join us on [Slack](https://slack.prepr.io).
 
-### You found a bug or want to propose a feature?
-
+**You found a bug or want to propose a feature?**. 
 File an issue here on GitHub. Don't share any authentication info in any code before sharing it.
