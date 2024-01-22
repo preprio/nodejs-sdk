@@ -28,8 +28,8 @@ const { createPreprClient } = require('@preprio/nodejs-sdk')
 const prepr = createPreprClient({
   token: '<your access token>', // required
   timeout: 4000, // default value
-  baseUrl: 'https://cdn.prepr.io', // default value (REST API), for GraphQL API use https://graphql.prepr.io/graphql
-  userId: null, // optional, used for AB testing
+  baseUrl: 'https://graphql.prepr.io/graphql', // default value (GraphQL API), for GraphQL API use https://cdn.prepr.io/
+  customerId: null, // optional, used for AB testing and personalization
 })
 
 module.exports = { prepr }
@@ -46,10 +46,10 @@ To perform API requests you can make use of our fluent builder, this is how it l
 const { prepr } = require('./services/prepr')
 
 const result = await prepr
-  .graphqlQuery(`GraphQL Query`) // https://prepr.dev/docs/graphql/v1/collection-introduction
+  .graphqlQuery(`GraphQL Query`) // https://docs.prepr.io/reference/graphql/v1/fetching-collections
   .graphqlVariables({JSON_VARIABLE_PAYLOAD})
   .timeout(8000) // Override globally set timeout for request cancellation
-  .userId('...') // Override globally set userId for ab testing
+  .customerId('...') // Override globally set userId for ab testing or personalization
   .token('xx-xx') // Update the Token used by the SDK for example when previewing staged content   
   .fetch() // Fetch the collections
 ```
@@ -73,7 +73,7 @@ Let's request all Pages in our Prepr environment.
     .fetch()
 ```
 
-To help you querying our API we've added multiple examples to our [GraphQL Reference](https://prepr.dev/docs/graphql/v1/introduction).
+To help you querying our API we've added multiple examples to our [GraphQL Reference](https://docs.prepr.io/reference/graphql/v1/fetching-collections).
 
 ## Usage REST API
 
@@ -89,9 +89,9 @@ const result = await prepr
       'model' : {
           'eq' : 'x-x-x-x-x'
       }
-  }) // query data https://prepr.dev/docs/rest/v1/introduction
-  .timeout(8000) // Override globally set timeout for request cancellation
-  .userId('...') // Override globally set userId for ab testing
+  }) // query data https://docs.prepr.io/reference/rest/v1/introduction
+  .timeout(4000) // Override globally set timeout for request cancellation
+  .customerId('...') // Override globally set customerID for ab testing and personalization
   .token('xx-xx') // Update the Token used by the SDK for example when previewing staged content
   .sort('created_at') // Sort data
   .limit(8) // Limit the amount collections being returned
@@ -99,7 +99,7 @@ const result = await prepr
   .fetch() // Fetch the collections
 ```
 
-To help you querying our API we've added multiple examples to our [REST Reference](https://prepr.dev/docs/rest/v1/introduction).
+To help you to query our API we've added multiple examples to our [REST Reference](https://docs.prepr.io/reference/rest/v1/introduction).
 
 ## Reach out to us
 

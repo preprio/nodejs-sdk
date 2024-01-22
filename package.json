@@ -1,6 +1,6 @@
 {
   "name": "@preprio/nodejs-sdk",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "The official Prepr SDK for Node.js",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -25,7 +25,6 @@
   "homepage": "https://github.com/preprio/nodejs-sdk#readme",
   "dependencies": {
     "abort-controller": "^3.0.0",
-    "murmurhash": "^2.0.0",
     "node-fetch": "^2.6.1",
     "qs": "^6.9.6"
   },

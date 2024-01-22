@@ -3,7 +3,7 @@ declare module '@preprio/nodejs-sdk' {
     token?: string;
     baseUrl?: string;
     timeout?: number;
-    userId?: string;
+    customerId?: string;
   }
 
   class PreprClient {
@@ -11,10 +11,10 @@ declare module '@preprio/nodejs-sdk' {
       token: string = null,
       baseUrl: string = 'https://cdn.prepr.io',
       timeout: number = 4000,
-      userId: string = null,
+      customerId: string = null,
     }: ClientOptions);
 
-    public userId(userId: string): this;
+    public customerId(customerId: string): this;
     public timeout(milliseconds: number): this;
     public query(query: Record<string, any>): this;
     public sort(field: string): this;
