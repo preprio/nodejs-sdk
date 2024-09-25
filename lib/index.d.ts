@@ -14,6 +14,7 @@ declare module '@preprio/nodejs-sdk' {
       userId: string = null,
     }: ClientOptions);
 
+    public token(token: string): this;
     public userId(userId: string): this;
     public timeout(milliseconds: number): this;
     public query(query: Record<string, any>): this;
